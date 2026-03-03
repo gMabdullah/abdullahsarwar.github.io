@@ -19,8 +19,7 @@
   function updateGitHubChart(theme) {
     var img = document.getElementById("github-chart");
     if (!img) return;
-    var base = "https://github-readme-activity-graph.vercel.app/graph?username=gMabdullah&area=true&hide_border=true";
-    img.src = base + (theme === DARK ? "&theme=react" : "&theme=github-light");
+    img.src = "https://ghchart.rshah.org/gMabdullah";
   }
 
   function init() {
