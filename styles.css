@@ -67,11 +67,27 @@ body {
   flex-wrap: wrap;
 }
 
+.nav-brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+}
+
+.nav-brand:hover {
+  color: var(--accent);
+}
+
 .nav-link {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
+}
+
+.nav-link:first-of-type {
+  margin-left: auto;
 }
 
 .nav-link:hover {
@@ -127,6 +143,24 @@ body {
 /* ----- Hero ----- */
 .hero {
   padding: 0.5rem 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .hero-title {
@@ -290,6 +324,15 @@ body {
 /* ----- About page ----- */
 .about-page .about-hero {
   padding: 0.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.about-hero-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .about-title {
