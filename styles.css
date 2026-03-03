@@ -1,0 +1,377 @@
+/* ----- Variables ----- */
+:root {
+  --bg: #faf9f7;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #5c5c5c;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border: #e5e3e0;
+  --divider: #e5e3e0;
+  --link: #2563eb;
+  --link-visited: #4338ca;
+}
+
+[data-theme="dark"] {
+  --bg: #0f0f0f;
+  --surface: #181818;
+  --text: #f0f0f0;
+  --text-muted: #a0a0a0;
+  --accent: #60a5fa;
+  --accent-hover: #93c5fd;
+  --border: #2a2a2a;
+  --divider: #2a2a2a;
+  --link: #60a5fa;
+  --link-visited: #a78bfa;
+}
+
+/* ----- Base ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* ----- Header ----- */
+.site-header {
+  padding: 1.5rem 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: var(--text);
+}
+
+.nav-link.active {
+  color: var(--text);
+}
+
+.theme-toggle {
+  margin-left: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--border);
+}
+
+.theme-icon {
+  display: none;
+}
+
+.theme-icon.sun {
+  display: block;
+}
+
+[data-theme="dark"] .theme-icon.sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-icon.moon {
+  display: block;
+}
+
+/* ----- Main ----- */
+.main {
+  flex: 1;
+  padding: 0.5rem 0 2rem;
+}
+
+/* ----- Hero ----- */
+.hero {
+  padding: 0.5rem 0 1rem;
+}
+
+.hero-title {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.hero-title .name {
+  color: var(--accent);
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  max-width: 56ch;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.social-links a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Divider ----- */
+.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 2rem 0;
+}
+
+/* ----- Section title ----- */
+.section-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+}
+
+/* ----- Projects ----- */
+.projects .project + .project {
+  margin-top: 1.75rem;
+}
+
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.project-time {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.project-desc {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.project-links a {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
+/* ----- GitHub chart ----- */
+.github-activity {
+  margin-top: 0.5rem;
+}
+
+.chart-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1rem;
+}
+
+.github-chart-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ----- About page ----- */
+.about-page .about-hero {
+  padding: 0.5rem 0 0;
+}
+
+.about-title {
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.about-lead {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.about-hero p,
+.experience p,
+.skills,
+.education,
+.certs {
+  margin: 0 0 1rem;
+  font-size: 0.98rem;
+}
+
+.job + .job,
+.edu-item + .edu-item {
+  margin-top: 1.5rem;
+}
+
+.job-header,
+.edu-item .edu-title {
+  margin-bottom: 0.35rem;
+}
+
+.job-title,
+.edu-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.job-meta,
+.edu-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.skills-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-grid li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.skills-grid li:last-child {
+  border-bottom: none;
+}
+
+.certs-list {
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.certs-list li {
+  margin-bottom: 0.35rem;
+}
+
+.contact-about {
+  margin-top: 1rem;
+}
+
+.contact-about p {
+  margin: 0 0 0.5rem;
+}
+
+.contact-about a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.contact-about a:hover {
+  text-decoration: underline;
+}
+
+/* ----- Footer ----- */
+.site-footer {
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--divider);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.footer-credit {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.footer-back {
+  color: var(--link);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-back:hover {
+  text-decoration: underline;
+}
+
+/* ----- Links (global) ----- */
+a {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--link-visited);
+}
